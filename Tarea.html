@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédito Bancario</title>
+</head>
+<body>
+    <h1>Verificación de crédito bancario</h1>
+    <label for="edad">Edad: </label>
+    <input type="number" id="edad" placeholder="Ingresa tu edad">
+    <br><br>
+    <label for="salario">Salario mensual: </label>
+    <input type="number" id="salario" placeholder="Ingresa tu salario mensual">
+    <br><br>
+    <button onclick="verificarCredito()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarCredito() {
+            let edad = parseInt(document.getElementById('edad').value);
+            let salario = parseFloat(document.getElementById('salario').value);
+            let resultado = document.getElementById('resultado');
+
+            if (edad > 25 && salario > 3000) {
+                resultado.textContent = "Puedes aplicar a un crédito bancario.";
+            } else {
+                resultado.textContent = "No cumples con los requisitos para aplicar a un crédito bancario.";
+            }
+        }
+    </script>
+</body>
+</html>
